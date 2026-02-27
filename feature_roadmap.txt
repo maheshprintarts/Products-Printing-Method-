@@ -1,0 +1,14 @@
+Feature Roadmap
+
+Phase 1 MVP Database setup Recommendation API Basic UI product selection
+Admin CRUD panel Production time display
+
+Phase 2 Enhancement Advanced filtering based on color and material
+Ranking recommendation logic Product category filtering Improved UI
+design
+
+Phase 3 Business Tools Quotation generator Cost estimation engine
+Artwork requirement checker Export PDF feature
+
+Phase 4 Scale and Integration ERP integration Mobile app AI based
+suggestion Analytics dashboard

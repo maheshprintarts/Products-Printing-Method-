@@ -1,0 +1,55 @@
+Project Title Printing Method Recommendation and Specification System
+
+Project Objective Build a system where users can select a product and
+instantly receive suitable printing methods, allowed color count per
+method, special notes, and estimated production time. The goal is to
+reduce manual decision making, improve quotation speed, and avoid
+production mistakes.
+
+Target Users Sales team Customer support team Production planning team
+Future customers through a self service portal
+
+Core Features Product selection with dropdown or search and category
+filtering Printing recommendation engine that returns available methods,
+color limits, notes, and optional ranking Smart filtering based on color
+count, budget, quantity, and material Admin panel to add edit products
+and update printing capabilities Production time estimator with static
+database time and future dynamic calculation API layer for product list,
+recommendation, and admin updates
+
+System Architecture Frontend options include React, Vue, or simple HTML
+for MVP Backend recommended Python FastAPI or Flask Database SQLite for
+MVP and PostgreSQL or MySQL for scaling Architecture flow User to
+Frontend to Backend API to Database to Recommendation Engine to Response
+UI
+
+Database Design Table products with id, name, category, material, image
+Table printing_methods with id, method_name, description Table
+product_printing_specs with id, product_id, method_id, color_limit,
+notes, is_available Table production_time with id, product_id, min_days,
+max_days
+
+Recommendation Logic Basic logic fetch product specs, remove unavailable
+methods, and show remaining Advanced logic score methods based on color
+match, production speed, cost efficiency, and material compatibility
+
+UI UX Requirements Simple product search Clean recommendation panel
+Icons for printing methods Color badges Export to PDF for quotation
+support
+
+Security and Roles Admin login Sales login Read only customer mode
+
+Future Scope Quote generator Cost calculation engine Artwork requirement
+checker Integration with production workflow AI suggestion from image to
+printing method Mobile app ERP integration
+
+MVP Scope Product database setup Recommendation API Basic UI for product
+selection and method display Admin CRUD panel Production time display
+
+Estimated Development Effort MVP two to four weeks single developer Full
+system two to three months
+
+Questions for Developer Which tech stack is recommended and why Can the
+system scale to thousands of products How recommendation logic will be
+structured Can cost estimation be integrated later Will API support
+mobile app Admin panel framework choice Hosting recommendation

@@ -1,0 +1,26 @@
+Developer Requirement Document
+
+Project Name Printing Method Recommendation and Specification System
+
+Overview System to recommend suitable printing methods and color options
+based on selected product using structured database and API driven
+backend.
+
+Technical Stack Recommendation Frontend React or simple HTML for MVP
+Backend Python FastAPI Database SQLite for MVP and PostgreSQL for
+scaling API REST based architecture
+
+Functional Requirements Product search and selection Recommendation
+engine returning methods and color limits Admin panel with CRUD
+operations for products and specs Production time display Role based
+authentication for admin and sales
+
+Non Functional Requirements Scalable database design Secure
+authentication Fast API response Clean UI and responsive layout
+Extensible architecture for cost engine and ERP integration
+
+API Requirements Product list API Recommendation API Admin create update
+delete API Authentication API
+
+Deployment Requirements Local deployment for MVP Cloud ready
+containerized architecture Version control with Git

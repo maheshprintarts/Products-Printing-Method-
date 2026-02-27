@@ -1,0 +1,51 @@
+# ===== Python / Backend =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.env
+.venv/
+
+# Database (generated at runtime)
+backend/printing_system.db
+
+# Uploaded product images (user data)
+backend/uploads/
+
+# Logs
+*.log
+backend_log.txt
+frontend_log.txt
+
+# ===== Node / Frontend =====
+node_modules/
+frontend/node_modules/
+
+# Vite build output
+frontend/dist/
+frontend/.vite/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Misc =====
+*.tmp
+*.bak
