@@ -1343,3 +1343,230 @@ select {
 .method-img-preview-wrap:hover .method-img-preview-overlay {
   opacity: 1;
 }
+
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(4, 7, 16, 0.96);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Toolbar */
+.lightbox-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(8, 13, 26, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(99, 155, 255, 0.1);
+  z-index: 9001;
+}
+
+.lightbox-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.lightbox-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lb-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.lb-btn:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: var(--accent);
+}
+
+.lb-close {
+  font-size: 0.9rem;
+}
+
+.lb-zoom-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 44px;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.lb-zoom-label:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+/* Image stage */
+.lightbox-stage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8);
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
+
+/* Prev / Next arrows */
+.lb-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 9001;
+}
+
+.lb-arrow:hover {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: var(--accent);
+}
+
+.lb-arrow-left {
+  left: 16px;
+}
+
+.lb-arrow-right {
+  right: 16px;
+}
+
+/* Dots */
+.lightbox-dots {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 9001;
+}
+
+.lb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lb-dot.active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* Hint text */
+.lightbox-hint {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: 9001;
+  white-space: nowrap;
+}
+
+/* Zoom icon on hover for method card images */
+.method-card-img-wrap.clickable {
+  cursor: zoom-in;
+}
+
+.method-card-img-zoom {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(8, 13, 26, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.method-card-img-wrap.clickable:hover .method-card-img-zoom {
+  opacity: 1;
+}
+
+/* Zoom icon on product header image */
+.recommend-header-img-wrap {
+  position: relative;
+}
+
+.lightbox-zoom-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 13, 26, 0.45);
+  border-radius: var(--radius-md);
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.recommend-header-img-wrap:hover .lightbox-zoom-hint {
+  opacity: 1;
+}
